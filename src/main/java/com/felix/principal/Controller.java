@@ -46,6 +46,7 @@ public class Controller implements Initializable {
 	@FXML
 	public void ProcurarCsv(ActionEvent event) throws UnknownHostException, IOException {
 		try {
+			textArea.clear();
 			FileChooser fileChooser = new FileChooser();
 			fileChooser.setTitle("Selecione o arquivo CSV para conversão");
 
@@ -68,7 +69,7 @@ public class Controller implements Initializable {
 				csv = true;
 
 				// Outputs
-				textArea.appendText("Arquivo Csv foi Selecionado\n");
+				textArea.appendText("Arquivo Csv foi Selecionado\nPor favor selecione a Pasta onde será salvo o Json");
 				System.out.println(fileCSV.getAbsolutePath() + " :: File Csv selected");
 			} else {
 				Button_Csv.setDisable(false);
@@ -87,6 +88,7 @@ public class Controller implements Initializable {
 	@FXML
 	public void ProcurarJson(ActionEvent event){
 		try {
+			textArea.clear();
 			DirectoryChooser dirChooser = new DirectoryChooser();
 			dirChooser.setTitle("Selecione uma pasta onde o File.Json e o times.txt será salvo");
 
@@ -106,7 +108,7 @@ public class Controller implements Initializable {
 				json = true;
 
 				// Outputs
-				textArea.appendText("Pasta foi Selecionada\n");
+				textArea.appendText("Pasta foi Selecionada\nPor favor selecione o arquivo Csv a ser convertido");
 				System.out.println(fileJson.getAbsolutePath() + " :: Folder selected");
 			} else {
 				Button_Json.setDisable(false);
